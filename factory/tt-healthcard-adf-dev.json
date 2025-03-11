@@ -1,0 +1,9 @@
+{
+	"name": "tt-healthcard-adf-dev",
+	"location": "uaenorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fe84b245-0d6f-40b5-9104-e66ac4598f54",
+		"tenantId": "99ab3059-72a7-4603-804e-ab2116634426"
+	}
+}

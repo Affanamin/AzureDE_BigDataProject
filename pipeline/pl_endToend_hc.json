@@ -1,0 +1,49 @@
+{
+	"name": "pl_endToend_hc",
+	"properties": {
+		"activities": [
+			{
+				"name": "ExecPL_ForSrcToEMR",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_emr_src_to_landing",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "ExecPL_ForDataBricks",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ExecPL_ForSrcToEMR",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_emr_src_to_landing",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-03-10T11:48:32Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

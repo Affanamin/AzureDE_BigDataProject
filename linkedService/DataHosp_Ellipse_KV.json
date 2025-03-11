@@ -1,0 +1,11 @@
+{
+	"name": "DataHosp_Ellipse_KV",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://keyvault-EllipseProject.vault.azure.net/"
+		}
+	}
+}
