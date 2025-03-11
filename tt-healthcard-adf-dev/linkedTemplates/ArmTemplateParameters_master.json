@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "tt-healthcard-adf-dev"
+		},
+		"AzureDatabricks_LS_properties_typeProperties_existingClusterId": {
+			"value": "0305-073826-veci6lvq"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://tt-health002-care-kv.vault.azure.net/"
+		},
+		"DataHosp_Ellipse_KV_properties_typeProperties_baseUrl": {
+			"value": "https://keyvault-EllipseProject.vault.azure.net/"
+		},
+		"DataLakeLinkedService_ls_properties_typeProperties_url": {
+			"value": "https://ttadlsgen22dev.dfs.core.windows.net/"
+		},
+		"hos_sql_ls_properties_typeProperties_server": {
+			"value": "ttrendytech-hospital-a.database.windows.net"
+		},
+		"hos_sql_ls_properties_typeProperties_database": {
+			"value": "@{linkedService().db_name}"
+		},
+		"hos_sql_ls_properties_typeProperties_userName": {
+			"value": "hospadmina"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
