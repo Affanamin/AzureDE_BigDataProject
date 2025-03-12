@@ -4,9 +4,6 @@
 <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/> </a>
 <a href="https://kafka.apache.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="kafka" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> -->
 </p>
-
-<p align="center"> <img src="images/adf_001.png" width="600"> </p>
-
 <h3 align="left">Tech Stack:</h3>
 
 <ul>
@@ -16,6 +13,11 @@
   <li><b>Security:</b> Azure Key Vault, Linked Services</li>
   <li><b>Data Sources:</b> Azure SQL, APIs, JSON, CSV</li>
 </ul>
+
+<p align="center"> <img src="images/adf_001.png" width="900"> </p>
+<p align="center"> <img src="images/adf_002.png" width="900"> </p>
+<p align="center"> <img src="images/adf_003.png" width="900"> </p>
+<p align="center"> <img src="images/adf_004.png" width="900"> </p>
 
 <h3 align="left">Pipeline Overview:</h3>
 
@@ -40,6 +42,10 @@
       <li>Transform data into <b>Fact & Dimension Models</b> with foreign key relationships</li>
   </li>
 </ul>
+
+<p align="center"> <img src="images/DataBricks_001.png" width="900"> </p>
+<p align="center"> <img src="images/DS_001.png" width="900"> </p>
+<p align="center"> <img src="images/LS_001.png" width="900"> </p>
 
 <h3 align="left">Additional Features:</h3>
 <ul>
