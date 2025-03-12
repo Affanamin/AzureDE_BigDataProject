@@ -1,0 +1,60 @@
+get Item:
+
+@item().targetpath
+
+get item with split:
+
+@split(item().tablename,'.')[1]
+
+Concat data pathh to insert with partitions:
+
+@concat(item().targetpath, '/archive/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))
+
+select query with concat:
+-----------------------------------------------------------------------------------------------------------------------------------
+@concat('select *,''',item().datasource,''' as datasource from ', item().tablename)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+@concat(
+    'insert into tt_hc_adb_ws.audit.load_logs(data_source,tablename,numberofrowscopied,watermarkcolumnname,loaddate) values (''',
+    item().datasource, ''', ''',
+    item().tablename, ''', ',
+    activity('FullLoad_CP').output.rowsCopied, ', ''',
+    item().watermark, ''', ''',
+    utcNow(), ''')'
+)
+-----------------------------------------------------------------------------------------------------------------------------------
+@concat(
+    'select coalesce(cast(max(loaddate) as date), ''1900-01-01'') as last_fetched_date from tt_hc_adb_ws.audit.load_logs where data_source = ''', 
+    item().datasource, 
+    ''' and tablename = ''', 
+    item().tablename, 
+    ''''
+)
+-----------------------------------------------------------------------------------------------------------------------------------
+@concat(
+    'select *, ''', 
+    item().datasource, 
+    ''' as datasource from ', 
+    item().tablename, 
+    ' where ', 
+    item().watermark, 
+    ' >= ''', 
+    activity('Fetch_logs').output.firstRow.last_fetched_date, 
+    ''''
+)
+-----------------------------------------------------------------------------------------------------------------------------------
+
+@concat(
+    'insert into tt_hc_adb_ws.audit.load_logs(data_source, tablename, numberofrowscopied, watermarkcolumnname, loaddate) values (''', 
+    item().datasource, 
+    ''', ''', 
+    item().tablename, 
+    ''', ', 
+    activity('IncrementalLoad_CP').output.rowsCopied, 
+    ', ''', 
+    item().watermark, 
+    ''', ''', 
+    utcNow(), 
+    ''')'
+)
